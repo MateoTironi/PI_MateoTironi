@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actFilter, cleanState, filterByOrigin, filterByType, getPokemons, getTypes, orderByName } from "../actions";
-import { Link, NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import '../styles/Filter.css'
 import '../styles/Home.css'
 import Card from "./Card";
@@ -11,13 +11,12 @@ export default function Home() {
     let [currentPage, setCurrentPage] = useState(0);
     let [page, setPage] = useState(1);
     let [render, setRender] = useState('');
-    // let [isLoading, setLoading] = useState(false);
+
 
     useEffect(e => {
         dispatch(cleanState())
         dispatch(getPokemons())
         dispatch(getTypes());
-        // setLoading(true)
     }, [dispatch]);
 
     let types = useSelector((state) => state.types);
@@ -126,15 +125,13 @@ export default function Home() {
             <div className="lists__pokemons">
                 {listPokemons().length !== 0 ? listPokemons().map(e => {
                     return (
-                        <Card e={e}/>
+                        <Card e={e} />
                     )
-
                 }) : <h4>No hay pokemons con estas caracteristicas..</h4>}
             </div>
             {
                 listPokemons().length !== 0 ? numberPages() : null
             }
-
         </div>
     )
 

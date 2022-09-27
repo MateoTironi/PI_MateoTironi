@@ -21,13 +21,13 @@ export default function CreatePokemon() {
 
     function validateText(e) {
         if (!e.target.value.trim()) setErr({ ...err, [e.target.name]: `Falta completar ${e.target.name}` })
-        if (/\d/.test(e.target.value)) setErr({ ...err, [e.target.name]: `${e.target.name} solo puede contener letras` });
+        if (/\d/.test(e.target.value) || /\W/.test(e.target.value)) setErr({ ...err, [e.target.name]: `${e.target.name} solo puede contener letras` });
         else setErr({ ...err, [e.target.name]: null })
     }
 
     function validateNumber(e) {
 
-        if (/[A-z]/.test(e.target.value)) setErr({ ...err, [e.target.name]: `${e.target.name} solo puede contener numeros` });
+        if (/[A-z]/.test(e.target.value) || /\W/.test(e.target.value)) setErr({ ...err, [e.target.name]: `${e.target.name} solo puede contener numeros` });
         else setErr({ ...err, [e.target.name]: null })
     }
 

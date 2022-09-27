@@ -41,6 +41,7 @@ module.exports = (sequelize) => {
 
     img:{
       type: DataTypes.STRING,
+      default: 'https://www.clipartmax.com/png/small/171-1711346_fake-pokemon-png.png'
     },
 
     createdInDb:{

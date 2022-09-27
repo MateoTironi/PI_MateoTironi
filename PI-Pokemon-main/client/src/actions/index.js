@@ -78,6 +78,7 @@ export function createPokemon({name, life, attack, defense, speed, height, weigh
             createdInDb,
         })
             .then(r => dispatch({ type: CREATE_POKEMON, payload: r.data }))
+            .catch(err => alert(err))
     }
 }
 
@@ -85,6 +86,7 @@ export function getPokemonById(id) {
     return function (dispatch) {
         axios.get(`http://localhost:3001/pokemons/${id}`)
             .then(r => dispatch({ type: GET_POKEMON_BY_ID, payload: r.data }))
+            .catch(err => alert(err))
     }
 }
 

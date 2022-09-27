@@ -39,7 +39,9 @@ router.post('/pokemons', async (req, res) => {
         if (typeof type === 'string') {
             type = type.split(',')  
         }
-
+        const repeated = await Pokemon.findOne({where:{name: name}})
+        if(repeated) return
+         
         const newPokemon = await Pokemon.create({
             name,
             life,

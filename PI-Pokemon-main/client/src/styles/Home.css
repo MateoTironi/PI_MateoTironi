@@ -1,0 +1,95 @@
+body {
+    background: rgb(85, 144, 189);
+    background: linear-gradient(90deg,
+            rgba(85, 144, 189, 1) 0%,
+            rgba(108, 183, 240, 1) 54%,
+            rgba(182, 216, 242, 1) 82%);
+    text-align: center;
+    /* font-family: Arial, Helvetica, sans-serif;
+    font-family: "Oswald", sans-serif; */
+}
+
+.link{
+    color: black;
+    text-decoration: none;
+}
+
+.card-container {
+    margin-top: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 400ms ease-out;
+    border-radius: 5px;
+}
+
+.card-container:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+p{
+    padding: 5px;
+}
+
+.lists__pokemons {
+    margin-left: 280px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 2em;
+    padding: 1em;
+    text-align: center;
+}
+
+.lists__pokemons h4{
+    margin-top: 15px;
+    color: whitesmoke;
+    font-size: 30px;
+    width: 350%;
+}
+
+.pokemon__img {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 3px;
+    /* color: #fff; */
+    padding: 0.5em;
+}
+
+.pokemon__img img {
+    height: 200px;
+    width: 100%;
+    margin-top: -5em;
+}
+
+.paginado{
+    background-color: whitesmoke;
+    justify-content: center;
+    display: flex;
+    position:relative;
+    overflow: hidden;
+    width: 15%;
+    left: 50%;
+    bottom: 5px;
+    border-radius: 5px;
+    box-shadow: slategrey;
+}
+
+.paginado button{
+    width: 55px;
+    height: 20px;
+    background:none;
+    border: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 520;
+    transition: .2s linear;
+    /* border-right: 1px solid black; */
+}
+
+.paginado button:hover{
+    background-color:gray;
+}
+
+.act-page{
+    background-color: azure;
+}

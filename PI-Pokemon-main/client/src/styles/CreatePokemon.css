@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* background-image: url('../img/img4lp.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+body {
+    background-image: url('../img/img4lp.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card {
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 800px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.card form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.card form div {
+    margin: 15px;
+    color: whitesmoke;
+}
+
+.card h5 {
+    align-items: center;
+    color: whitesmoke;
+}
+
+.card button {
+    width: 50px;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+}
+
+.title-cr {
+    display: flex;
+    color: white;
+    width: 800px;
+    background-color: rgb(0, 0, 0, 0.6);
+    margin: auto;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.title-cr h1 {
+    margin-left: 50px;
+}
+
+.title-cr button {
+    width: 50px;
+}
+
+.danger {
+    font-size: 15px;
+    font-weight: 800;
+    color: red;
+}
+
+.submit {
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    background-color:lightgray;
+    width: 70px;
+    margin-top: 25px;
+}

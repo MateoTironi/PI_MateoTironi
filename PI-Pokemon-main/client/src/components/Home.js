@@ -24,6 +24,7 @@ export default function Home() {
     const cantPages = Math.ceil(pokemons.length / 12)
 
     const listPokemons = () => {
+        if(pokemons.length === 1 ) return pokemons
         return pokemons.slice(currentPage, currentPage + 12)
     }
 
@@ -112,7 +113,7 @@ export default function Home() {
                 </footer>
             </div>)
     }
-
+    
     return (
         <div key={'Home'} className='body'>
             <div key={'Filters'}>
@@ -124,6 +125,7 @@ export default function Home() {
 
             <div className="lists__pokemons">
                 {listPokemons().length !== 0 ? listPokemons().map(e => {
+                    
                     return (
                         <Card e={e} />
                     )

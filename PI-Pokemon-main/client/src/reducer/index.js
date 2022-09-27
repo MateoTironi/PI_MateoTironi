@@ -15,7 +15,7 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 pokemons: [...state.pokemons, action.payload],
-                allPokemons: [...state.pokemons, action.payload]
+                allPokemons: [...state.allPokemons, action.payload]
             }
 
         case GET_POKEMON:
@@ -64,6 +64,7 @@ export default function rootReducer(state = initialState, action) {
             } else if (action.value === 'originals') {
                 pokemonOrigin = pokemonOrigin.filter(el => !el.createdInDb)
             } else pokemonOrigin = state.allPokemons
+            
             return {
                 ...state,
                 pokemons: pokemonOrigin
@@ -87,7 +88,6 @@ export default function rootReducer(state = initialState, action) {
                     return 0
                 })
             } 
-            console.log(sortArr)
             return {
                 ...state,
                 pokemons: sortArr

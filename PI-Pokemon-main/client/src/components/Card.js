@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Card({e}){
+    // console.log(e)
     return (
         <div key={e.name} className='card-container'>
             <NavLink to={`/n/detail/${e.name}`} className='link'>

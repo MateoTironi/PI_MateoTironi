@@ -63,7 +63,7 @@ export default function rootReducer(state = initialState, action) {
                 pokemonOrigin = pokemonOrigin.filter(el => el.createdInDb)
             } else if (action.value === 'originals') {
                 pokemonOrigin = pokemonOrigin.filter(el => !el.createdInDb)
-            } else pokemonOrigin = state.allPokemons
+            }
             
             return {
                 ...state,
@@ -88,7 +88,7 @@ export default function rootReducer(state = initialState, action) {
                     return 0
                 })
             } else sortArr = state.allPokemons
-            
+
             return {
                 ...state,
                 pokemons: sortArr
@@ -104,7 +104,8 @@ export default function rootReducer(state = initialState, action) {
             return{
                 ...state,
                 pokemons: [],
-                details: []
+                details: [],
+                allPokemons: [],
             }
 
         case DELETE:

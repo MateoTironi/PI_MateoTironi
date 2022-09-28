@@ -95,7 +95,14 @@ router.get('/pokemons/:idPokemon', async (req, res) => {
     }
 });
 
+router.get('/delete/:id', (req, res) =>{
+    let {id} = req.params;
 
+    Pokemon.destroy({
+        where:{id: id}
+    }).then(r => res.status(200).json(r))
+        .catch(err => res.status(400).json({error: err}))
+})
 
 
 module.exports = router;

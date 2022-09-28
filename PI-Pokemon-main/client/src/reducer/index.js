@@ -1,4 +1,4 @@
-import { ACT_FILTER, CLEAN_STATE, CREATE_POKEMON, FILTER_BY_ORIGIN, FILTER_POKEMON_TYPE, GET_POKEMON, GET_POKEMONS, GET_POKEMON_BY_ID, GET_TYPES, ORDER_BY_NAME } from "../actions";
+import { ACT_FILTER, CLEAN_STATE, CREATE_POKEMON, DELETE, FILTER_BY_ORIGIN, FILTER_POKEMON_TYPE, GET_POKEMON, GET_POKEMONS, GET_POKEMON_BY_ID, GET_TYPES, ORDER_BY_NAME } from "../actions";
 
 const initialState = {
     pokemons: [],
@@ -87,7 +87,8 @@ export default function rootReducer(state = initialState, action) {
                     if (a.attack < b.attack) return -1;
                     return 0
                 })
-            } 
+            } else sortArr = state.allPokemons
+            
             return {
                 ...state,
                 pokemons: sortArr
@@ -104,6 +105,14 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 pokemons: [],
                 details: []
+            }
+
+        case DELETE:
+            let pokemons = state.pokemons;
+            pokemons = pokemons.filter(p => p.id !== action.id)
+            return{
+                ...state,
+                pokemons: pokemons
             }
 
         default:

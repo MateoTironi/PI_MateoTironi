@@ -61,7 +61,7 @@ export default function Home() {
     const handelOrderByName = (e) => {
         e.preventDefault()
         dispatch(orderByName(e.target.value))
-        setCurrentPage(1)
+        setCurrentPage(0)
         setPage(1)
         setRender(`Ordenado por ${e.target.value}`)
     }
@@ -80,8 +80,8 @@ export default function Home() {
 
                         return (
                             <div className="checkbox">
-                                <input type={'checkbox'} checked={null} value={e} onChange={e => handleFilterByType(e)}></input>
-                                <p key={e}>{e}</p>
+                                <input type={'checkbox'} checked={null} id={e} value={e} onChange={e => handleFilterByType(e)}/>
+                                <p for={e} key={e}>{e}</p>
                             </div>
                         )
                     }) : null}

@@ -22,6 +22,19 @@ body {
     border-radius: 5px;
 }
 
+.card-container button{
+    display: flex;
+    margin-left: 95%;
+    margin-top: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+.card-container button:hover{
+    color: red;
+}
+
 .card-container:hover {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-3%);

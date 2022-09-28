@@ -10,6 +10,8 @@ export const ACT_FILTER = 'ACT_FILTER';
 export const FILTER_BY_ORIGIN = 'FILTER_BY_ORIGIN';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const CLEAN_STATE = 'CLEAN_STATE';
+export const DELETE = 'DELETE';
+
 
 export function getPokemons(name) {
     if (name) {
@@ -27,6 +29,7 @@ export function getPokemons(name) {
                     if (!e.url){
                         // console.log('DB--',e)
                         let pokemon = {
+                            id: e.id,
                             name: e.name,
                             img: e.img,
                             attack: e.attack,
@@ -137,3 +140,10 @@ export function cleanState(){
     }
 }
 
+export function deletePokemon(id){
+   return function(dispatch){
+       axios.get(`http://localhost:3001/delete/${id}`)
+           .then(r => {dispatch({type: DELETE , id})})
+   }
+   
+}

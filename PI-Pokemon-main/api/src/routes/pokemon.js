@@ -11,8 +11,8 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 router.get('/pokemons', async (req, res) => {
-
     let { name } = req.query;
+    
     if (name) {
 
         try {

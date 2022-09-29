@@ -12,7 +12,6 @@ export default function Home() {
     let [page, setPage] = useState(1);
     let [render, setRender] = useState('');
 
-
     useEffect(e => {
         dispatch(cleanState())
         dispatch(getPokemons())

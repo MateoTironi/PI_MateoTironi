@@ -13,10 +13,10 @@ export const CLEAN_STATE = 'CLEAN_STATE';
 export const DELETE = 'DELETE';
 
 
-export function getPokemons(id) {
-    if (id) {
+export function getPokemons(name) {
+    if (name) {
         return function (dispatch) {
-            axios.get(`http://localhost:3001/pokemons/${id}`)
+            axios.get(`http://localhost:3001/pokemons?name=${name}`)
                 .then(p => dispatch({ type: GET_POKEMON, payload: p.data }))
                 .catch(err => { alert(err) })
         }
@@ -65,6 +65,7 @@ export function getPokemons(id) {
             }).catch(err => alert(err))
     }
 }
+
 
 export function createPokemon({name, life, attack, defense, speed, height, weight, type, img, createdInDb}) {
     // console.log(name, life, attack, defense, speed, height, weight, type, img, createdInDb)

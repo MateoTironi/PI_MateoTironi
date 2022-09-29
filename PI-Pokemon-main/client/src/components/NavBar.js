@@ -27,8 +27,8 @@ export default function NavBar() {
         <div className="serch-bar">
             {/* <h2>NavBar</h2> */}
             <input type='search' placeholder="Buscar..." name='search' value={input.search} onChange={e => handleChange(e)} />
-            <Link to={`/n/detail/${input.search}`}>
-                <button type='submit' value={'Search'} onBlur={e => handleClick(e)}><img src={img} alt='lupa'/></button>
+            <Link to={`/n/detail/${false}?name=${input.search}`}>
+            {input.search ?<button type='submit' value={'Search'} onBlur={e => handleClick(e)}><img src={img} alt='lupa'/></button> : null} 
             </Link>
         </div>
     )

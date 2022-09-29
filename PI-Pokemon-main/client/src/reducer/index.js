@@ -4,7 +4,7 @@ const initialState = {
     pokemons: [],
     types: [],
     allPokemons: [],
-    details: {},
+    details: [],
     filter: {}
 };
 
@@ -19,10 +19,10 @@ export default function rootReducer(state = initialState, action) {
             }
 
         case GET_POKEMON:
-            console.log(action.payload)
+            
             return {
                 ...state,
-                details: action.payload
+                details: [...state.details, action.payload]
             }
 
         case CREATE_POKEMON:
@@ -98,7 +98,7 @@ export default function rootReducer(state = initialState, action) {
         case GET_POKEMON_BY_ID:
             return {
                 ...state,
-                details: action.payload
+                details: [...state.details, action.payload]
             }
 
         case CLEAN_STATE:

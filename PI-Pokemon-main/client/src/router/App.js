@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <Route exact path={'/'} component={Landing} />
-        <Route path={'/n'} component={NavBar} />
+        <Route exact path={'/n/home'} component={NavBar} />
         <Route exact path={'/n/home'} component={Home} />
         <Route path={'/n/detail/:id'} component={PokemonDetail} />
         <Route path={'/n/create'} component={CreatePokemon} />

@@ -1,26 +1,27 @@
-.detail{
+.detail {
     background-color: rgb(0, 0, 0, 0.5);
     width: 800px;
     margin: auto;
     border-radius: 10px;
     color: whitesmoke;
+    margin-top: 10px;
     margin-bottom: 25px;
 }
 
-.detail h1{
-  margin-left: 34%;
+.detail h1 {
+    margin-left: 34%;
 }
 
-ul{
+ul {
     list-style-type: none;
     padding-bottom: 10px;
 }
 
-li{
+li {
     margin-top: 5px;
 }
 
-.detail div{
+.detail div {
     display: flex;
     color: white;
     width: 800px;
@@ -32,12 +33,34 @@ li{
     border-radius: 15px 15px 0px 0px;
 }
 
-.detail button{
+.detail button {
     width: 50px;
     border-radius: 8px;
     margin-left: 5px;
+    margin-top: 5px;
 }
 
-.detail button:hover{
+.detail button:hover {
     background-color: grey;
+}
+
+#compare {
+    display: flex;
+    justify-content: end;
+    margin-right: 5px;
+}
+
+#compare input {
+    border: none;
+    border-radius: 3px;
+}
+
+#btn {
+    margin-top: 9px;
+    width: 15%;
+    height: 5%;
+}
+
+#btn:hover {
+    background-color: gray;
 }

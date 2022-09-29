@@ -17,7 +17,7 @@ function App() {
         <Route exact path={'/'} component={Landing} />
         <Route path={'/n'} component={NavBar} />
         <Route exact path={'/n/home'} component={Home} />
-        <Route path={'/n/detail/:name'} component={PokemonDetail} />
+        <Route path={'/n/detail/:id'} component={PokemonDetail} />
         <Route path={'/n/create'} component={CreatePokemon} />
         {/* <Route path={'/n/home/:type'} component={Filter} /> */}
       </div>

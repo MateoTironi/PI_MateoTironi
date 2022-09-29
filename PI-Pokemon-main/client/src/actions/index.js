@@ -13,10 +13,10 @@ export const CLEAN_STATE = 'CLEAN_STATE';
 export const DELETE = 'DELETE';
 
 
-export function getPokemons(name) {
-    if (name) {
+export function getPokemons(id) {
+    if (id) {
         return function (dispatch) {
-            axios.get(`http://localhost:3001/pokemons?name=${name}`)
+            axios.get(`http://localhost:3001/pokemons/${id}`)
                 .then(p => dispatch({ type: GET_POKEMON, payload: p.data }))
                 .catch(err => { alert(err) })
         }
@@ -43,6 +43,7 @@ export function getPokemons(name) {
                         .then(d => {
                             
                             let pokemon = {
+                                id: d.data.id,
                                 name: d.data.name,
                                 attack: d.data.stats[1].base_stat,
                                 img: d.data.sprites.other.home.front_default

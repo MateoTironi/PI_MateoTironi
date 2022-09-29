@@ -19,6 +19,7 @@ export default function rootReducer(state = initialState, action) {
             }
 
         case GET_POKEMON:
+            console.log(action.payload)
             return {
                 ...state,
                 details: action.payload

@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 import '../styles/Details.css'
 
 export default function PokemonDetail(props) {
-    let { name } = props.match.params
+    let { id } = props.match.params
     let dispatch = useDispatch()
-
+    
     useEffect(e => {
         dispatch(cleanState())
-        dispatch(getPokemons(name))
-    }, [dispatch, name])
+        dispatch(getPokemons(id))
+    }, [dispatch, id])
 
     let details = useSelector(state => state.details)
     let type = details.types ? details.types.map(e => {

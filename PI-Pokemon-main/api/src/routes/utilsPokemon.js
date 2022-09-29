@@ -35,9 +35,8 @@ const allList = async () => {
 }
 //-------------------------POKEMON BY ID O NAME-------------------
 const getPokemonApi = async (id) => {
-
     const r = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-
+    
     let pokemon = {
         id: r.data.id,
         name: r.data.name,
@@ -45,7 +44,7 @@ const getPokemonApi = async (id) => {
         weight: r.data.weight,
         img: r.data.sprites.other.home.front_default
     }
-
+    
     r.data.stats.forEach(e => {
 
         if (e.stat.name === 'hp') pokemon.life = e.base_stat
@@ -66,8 +65,14 @@ const getPokemonApi = async (id) => {
 }
 
 const pokemonByIdDb = async (id) => {
-    const result = await Pokemon.findByPk(id)
-
+    const result = await Pokemon.findByPk(id,{
+        include: {
+            model: Type,
+            attributes: ['name']
+        }
+    })
+    
+    
     if (!result) throw new Error('Not found Pokemon in Db');
 
     return result;
@@ -89,17 +94,18 @@ const pokemonByNameDb = async (name) => {
 
 const pokemonById = async (id) => {
 
-    const api = await getPokemonApi(id);
     // console.log('s')
-
-    if (api) return api
-
-    const db = await pokemonByIdDb(id);
-
-    // console.log('API: ', api)
-    // console.log('DB: ', db)
-
-    return db;
+    
+    try {
+        const api = await getPokemonApi(id);
+        if(api) return api
+        
+    } catch (err) {
+        const db = await pokemonByIdDb(id);
+        if(db) return db
+    }
+    
+    return 'Personaje no encontrado';
 }
 
 const pokemonByName = async (name) => {

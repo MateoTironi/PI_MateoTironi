@@ -84,11 +84,12 @@ router.get('/pokemons/filter', async (req, res) => {
 
 router.get('/pokemons/:idPokemon', async (req, res) => {
     let { idPokemon } = req.params;
-
+    
     if (!idPokemon) throw new Error('Params must be true')
 
     try {
         const result = await pokemonById(idPokemon)
+        // console.log(result)
         return res.status(200).json(result)
     } catch (err) {
         res.status(400).json({ error: err })
